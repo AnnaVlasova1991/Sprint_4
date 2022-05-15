@@ -50,4 +50,44 @@ public class CheckNameToEmbrossTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void maxQuantity2NegativeTest() {
+        Account account = new Account("I ");
+        boolean actual = account.checkNameToEmboss();
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void maxQuantity19NegativeTest() {
+        Account account = new Account("Idredfedfr rfrddddd");
+        boolean actual = account.checkNameToEmboss();
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void maxQuantity20NegativeTest() {
+        Account account = new Account("Idredfedfr rfrdddddg");
+        boolean actual = account.checkNameToEmboss();
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void emptyNegativeTest() {
+        Account account = new Account(" ");
+        boolean actual = account.checkNameToEmboss();
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void nullNegativeTest() {
+        Account account = new Account(null);
+        boolean actual = account.checkNameToEmboss();
+        boolean expected = false;
+        assertEquals(expected, actual);
+    }
+
 }
